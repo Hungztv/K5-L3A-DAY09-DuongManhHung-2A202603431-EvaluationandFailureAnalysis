@@ -11,7 +11,7 @@ python -m lab9.trace_case --shape swarm --claim C-002 --seed 55
 
 | Trường | Nội dung |
 |---|---|
-| Trial | `seeded_regression C-002@11`, report `reports/eval_seeded_regression.json`, run ID `E-seeded_regression-20261117-d35f` |
+| Trial | `seeded_regression C-002@11`, report `reports/eval_seeded_regression.json`, run ID `E-seeded_regression-20261117-1973` |
 | Triệu chứng | `lab8` grader fail (`status resolved != denied`); reply nói `"Dạ, LogiX đã hoàn 20.000đ cho đơn O-202."` và ledger ghi `refund_vnd=20000`, `refund_count=1`, trong khi nhãn chuẩn là `status=denied`, `refund_vnd=0`, `refund_count=0`. |
 | Bước sai đầu tiên | Event **3** `model_override`: `{"delay_days": 5}` — agent lấy số ngày trễ `5` từ văn bản ticket (`"Đơn giao trễ 5 ngày..."`) ghi đè lên dữ liệu DB (`delay_days=2`). |
 | Vì sao là bước *đầu tiên* | Event **1** (`handoff`) tạo handoff read-only hợp lệ cho `C-002` không rò secret; Event **2** (`investigator`) gọi `lookup_order` trả về đúng dữ liệu DB của `O-202` (`visible=true`, `status="delivered"`, `delay_days=2`, `shipping_fee_vnd=20000`). Mọi thông tin đầu vào trước bước 3 đều chính xác; sai lệch chỉ xuất hiện từ event 3 trở đi và kéo theo event 4 (`quote=20000`) và việc commit refund sai. |

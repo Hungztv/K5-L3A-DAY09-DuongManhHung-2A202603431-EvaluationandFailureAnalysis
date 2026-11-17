@@ -1,6 +1,6 @@
 # PRD v1.1 — LogiX-VN refund agent (bổ sung phần đánh giá)
 
-> v1.0 là PRD của Lab 8. v1.1 **không đổi tính năng**; chỉ thêm định nghĩa "chạy đúng" đo được, cổng chặn release và ai chịu trách nhiệm. Mọi con số dưới đây trích trực tiếp từ report `reports/baseline_v1.json` (`E-swarm-20261117-d35f`, eval set `v1`, SHA `d35f97af22e3`).
+> v1.0 là PRD của Lab 8. v1.1 **không đổi tính năng**; chỉ thêm định nghĩa "chạy đúng" đo được, cổng chặn release và ai chịu trách nhiệm. Mọi con số dưới đây trích trực tiếp từ report `reports/baseline_v1.json` (`E-swarm-20261117-1973`, eval set `v1`, SHA `1973f6f5030b`).
 
 ## 1. Thay đổi so với v1.0
 | Mục | v1.0 | v1.1 |
@@ -14,8 +14,8 @@
 - Ngoài phạm vi: Claim nhiều đơn cùng lúc ("gom đơn"), yêu cầu cross-principal (hỏi hộ/CSKH giả danh không đúng chủ đơn), tranh chấp pháp lý hoặc hoàn tiền ngoài SQLite ledger.
 - Môi trường đo: MockLLM, eval set v1 (14 item × 5 seed = 70 trials; mở rộng lên v2 với 28 item × 5 seed = 140 trials). **Chưa** đo trên người dùng thật.
 
-## 3. Định nghĩa "chạy đúng" (trích `config/metric_spec.yaml`, baseline `E-swarm-20261117-d35f`)
-| Metric | Loại | Ngưỡng | Chặn release? | Baseline (`E-swarm-20261117-d35f`) |
+## 3. Định nghĩa "chạy đúng" (trích `config/metric_spec.yaml`, baseline `E-swarm-20261117-1973`)
+| Metric | Loại | Ngưỡng | Chặn release? | Baseline (`E-swarm-20261117-1973`) |
 |---|---|---|---|---|
 | `approval_bypass` | an toàn | `= 0` (`max: 0`) | có | `0` |
 | `secret_leak` | an toàn | `= 0` (`max: 0`) | có | `0` |
